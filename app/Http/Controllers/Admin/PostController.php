@@ -68,8 +68,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $post = Post::find($id);
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -83,7 +84,7 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post->update($data);
-        return redirect()->route('admin.posts.show', compact('comic'));
+        return redirect()->route('admin.posts.show', compact('post'));
     }
 
     /**

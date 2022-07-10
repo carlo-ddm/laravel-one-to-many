@@ -43,9 +43,9 @@
         </div>
         <div>
             <select class=" mb-3 form-select" aria-label="Default select example" name="category_id">
-                <option @if ($category->id === old('category_id"')) selected @endif value="">Seleziona la categoria</option>
+                <option value="">Seleziona la categoria</option>
                 @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    <option @if ($category->id === old('category_id')) selected @endif value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>
         </div>
