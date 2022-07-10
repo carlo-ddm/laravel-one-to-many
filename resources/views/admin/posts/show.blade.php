@@ -16,7 +16,9 @@
             <tr>
               <th scope="row">{{$post->id}}</th>
               <td>{{$post->title}}</td>
-              <td>{{$post->category->name}}</td>
+              @if ($post->category)
+                <td>{{$post->category->name}}</td>
+              @endif
               <td>{{$post->content}}</td>
               <td>
                 <a class="btn btn-outline-dark" href="{{route('admin.posts.index')}}">BACK</a>
