@@ -6,6 +6,7 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Titolo</th>
+            <th scope="col">Categoria</th>
             <th scope="col">Contenuto</th>
             <th scope="col"></th>
           </tr>
@@ -15,6 +16,7 @@
             <tr>
               <th scope="row">{{$post->id}}</th>
               <td>{{$post->title}}</td>
+              <td>{{$post->category->name}}</td>
               <td>{{$post->content}}</td>
               <td>
                 <a class="btn btn-outline-dark" href="{{route('admin.posts.index')}}">BACK</a>
