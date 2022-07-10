@@ -41,8 +41,18 @@
           <p class="error-msg">{{$message}}</p>
           @enderror
         </div>
-
+        <div>
+            <select class=" mb-3 form-select" aria-label="Default select example" name="category_id">
+                <option value="">Seleziona la categoria</option>
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <button type="submit" class="btn btn-outline-primary">CREA</button>
       </form>
+
+
+
   </form>
 @endsection
