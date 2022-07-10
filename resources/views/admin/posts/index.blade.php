@@ -28,6 +28,16 @@
         </tbody>
       </table>
       {{$posts->links()}}
+      <div class="container">
+        @foreach ($categories as $category)
+        <h3>{{$category->name}}</h3>
+            <ul>
+                @foreach ($category->posts as $post)
+                    <li><a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a></li>
+                @endforeach
+            </ul>
+        @endforeach
+      </div>
 
 </div>
 @endsection
