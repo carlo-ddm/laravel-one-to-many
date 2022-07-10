@@ -8,6 +8,9 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
+    public function caretgory(){
+        return $this->belongsTo('App\Category');
+    }
 
     protected $fillable = [
         'title',
