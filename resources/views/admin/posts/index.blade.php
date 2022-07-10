@@ -32,9 +32,11 @@
         @foreach ($categories as $category)
         <h3>{{$category->name}}</h3>
             <ul>
-                @foreach ($category->posts as $post)
+                @forelse ($category->posts as $post)
                     <li><a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a></li>
-                @endforeach
+                    @empty
+                    <li>Non sono presenti post per questa categoria</li>
+                @endforelse
             </ul>
         @endforeach
       </div>
